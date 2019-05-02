@@ -15,4 +15,4 @@ hs_err_pid*
 .gitignore
 .classpath
 .project
-.settings
+/.settings/
