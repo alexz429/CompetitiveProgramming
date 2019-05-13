@@ -1,4 +1,4 @@
-package _02;
+package CCC._02;
 import java.util.Scanner;
 public class S2_FractionAction {
 

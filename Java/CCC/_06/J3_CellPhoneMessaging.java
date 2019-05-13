@@ -1,4 +1,4 @@
-package _06;
+package CCC._06;
 
 import java.util.HashMap;
 import java.util.HashSet;

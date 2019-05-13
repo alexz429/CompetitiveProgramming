@@ -1,4 +1,4 @@
-package Round1A2019;
+package CodeJam.Round1A2019;
 
 import java.io.BufferedReader;
 import java.io.IOException;

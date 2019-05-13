@@ -1,4 +1,4 @@
-package _00;
+package CCC._00;
 import java.util.Scanner;
 public class S4_Golf {
 	

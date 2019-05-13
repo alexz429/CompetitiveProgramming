@@ -1,4 +1,4 @@
-package _16;
+package TLE._16;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 public class Contest8P2_DankMeme {

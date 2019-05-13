@@ -1,4 +1,4 @@
-package Qualifiers2019;
+package CodeJam.Qualifiers2019;
 
 import java.io.BufferedReader;
 import java.io.IOException;

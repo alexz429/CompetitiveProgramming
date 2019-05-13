@@ -1,4 +1,4 @@
-package _04;
+package CCC._04;
 import java.util.*;
 public class S3_Spreadsheet {
 	static long[][] grid;

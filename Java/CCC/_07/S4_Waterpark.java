@@ -1,4 +1,4 @@
-package _07;
+package CCC._07;
 import java.util.*;
 public class S4_Waterpark {
 	static HashMap<Integer, ArrayList<Integer>> num;

@@ -1,4 +1,4 @@
-package _03;
+package CCC._03;
 import java.util.*;
 public class J1_Trident {
 

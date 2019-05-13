@@ -1,4 +1,4 @@
-package _09;
+package DWITE2._09;
 
 public class R1No2_WordScrambler {
 

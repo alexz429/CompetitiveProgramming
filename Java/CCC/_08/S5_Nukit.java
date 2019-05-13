@@ -1,4 +1,4 @@
-package _08;
+package CCC._08;
 
 import java.util.Scanner;
 public class S5_Nukit {

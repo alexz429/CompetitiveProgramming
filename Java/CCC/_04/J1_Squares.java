@@ -1,4 +1,4 @@
-package _04;
+package CCC._04;
 import java.util.*;
 public class J1_Squares {
 	public static void main(String[] args){

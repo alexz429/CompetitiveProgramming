@@ -1,4 +1,4 @@
-package _07;
+package CCC._07;
 import java.util.*;
 public class S3_Friends {
 	static int[] num;

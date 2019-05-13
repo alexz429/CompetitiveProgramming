@@ -1,4 +1,4 @@
-package _01;
+package CCC._01;
 import java.util.*;
 public class S3_StrategicBombing {
 	static int recurse(int start, int[][] num, int max){

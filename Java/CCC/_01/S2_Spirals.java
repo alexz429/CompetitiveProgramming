@@ -1,4 +1,4 @@
-package _01;
+package CCC._01;
 import java.util.Arrays;
 import java.util.Scanner;
 public class S2_Spirals {

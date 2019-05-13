@@ -1,4 +1,4 @@
-package _07;
+package CCC._07;
 import java.util.*;
 public class J3_DealOrNoDeal {
 

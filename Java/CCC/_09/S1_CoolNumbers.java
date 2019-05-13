@@ -1,4 +1,4 @@
-package _09;
+package CCC._09;
 
 import java.util.HashSet;
 import java.util.Scanner;

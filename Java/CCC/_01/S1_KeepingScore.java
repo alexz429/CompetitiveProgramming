@@ -1,4 +1,4 @@
-package _01;
+package CCC._01;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package _05;
+package CCC._05;
 import java.util.*;
 public class J5_Bananas {
 	static int Sswitch=0;
