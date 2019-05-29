@@ -27,6 +27,7 @@ public class UnevenSand {
 			System.out.println(mid);
 			next=sc.next();
 		}
+		sc.close();
 	}
 
 }
