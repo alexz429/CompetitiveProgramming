@@ -9,16 +9,12 @@ public class Temp {
 	
 	public static void main(String[] args) throws Exception{
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-		String next=br.readLine();
 		int max=Integer.parseInt(br.readLine());
-		String best=next.substring(0, max);
-		for(int count=1;count<=next.length()-max;count++) {
-			String comp=next.substring(count, count+max);
-			if(best.compareTo(comp)>0) {
-				best=comp;
-			}
+		for(int count=0;count<max;count++) {
+			long next=Long.parseLong(br.readLine());
+			next=(long)(Math.sqrt(next*2)+1.5);
+			System.out.println(next);
 		}
-		System.out.println(best);
 	
 	}
 

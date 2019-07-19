@@ -19,7 +19,6 @@ public class J4_BabblingBrooks {
 				int where=sc.nextInt()-1;
 				int num2=sc.nextInt();
 				double temp=num.remove(where);
-				
 				num.add(where,temp*(100-num2)/100);
 				temp=temp*num2/100;
 				num.add(where, temp);
