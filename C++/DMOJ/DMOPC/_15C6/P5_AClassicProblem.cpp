@@ -19,7 +19,7 @@ int main(){
 
         size++;
         while(big.front()-small.front()>k&&size>0){
-            change=true;
+            
             // printf("%d %d\n", size, count);
             
             if(big.front()==vals[count-size+1]){
