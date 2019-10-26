@@ -1,0 +1,8 @@
+vector<int> rotLeft(vector<int> a, int d) {
+    vector<int> output;
+    for(int i=0;i<a.size();i++){
+        output.push_back(a[(i+d)%a.size()]);
+    }
+    return output;
+
+}
