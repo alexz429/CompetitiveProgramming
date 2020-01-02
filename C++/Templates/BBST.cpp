@@ -1,13 +1,15 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+
+
 struct node
 {
     int key;
-    struct node *left, *right;
+    struct node *left, *right; // nodes left are smaller, right are larger
     int dupli, less, more, height;
 };
-int getNum(struct node *n)
+int getNum(struct node *n)//number of elements in the entire subtree at node n
 {
     return n == NULL ? 0 : (n->more + n->less + n->dupli);
 }
@@ -221,6 +223,15 @@ int indexOf(struct node *at, int target, int order)
     }
     return indexOf(at->left, target, order);
 }
+int numSmaller(struct node * at, int comp){
+    if(at == NULL){
+        return 0;
+    }
+    if( at-> key < comp){
+        return (at-> dupli + at-> less + numSmaller(at->right, comp));
+    }
+    return numSmaller(at->left, comp);
+} 
 int main(){
     int max, q;
     struct node *root = NULL;
