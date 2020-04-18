@@ -1,62 +1,80 @@
-/*
- * Substring.cpp
- *
- *  Created on: May 13, 2019
- *      Author: Alex.Zhang
- */
-#include <iostream>
-
 #include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+#define MAX_CHILDREN 62
+map<int, int> hm;
 
- long long SENTINEL=(long long) 1.48764065e17;
-	static std::unordered_map<int, int> hash;
-	static void init() {
-		int index=0;
-		for(int i=48;i<58;i++) {
-			hash[i]=index;
-			index++;
-		}
-		for(int i=65;i<91;i++) {
-			hash[i]=index;
-			index++;
-		}
-		for(int i=97;i<123;i++) {
-			hash[i]=index;
-			index++;
+static void init()
+{
+	int index = 0;
+	for (int i = 48; i < 58; i++)
+	{
+		hm[i] = index;
+		index++;
+	}
+	for (int i = 65; i < 91; i++)
+	{
+		hm[i] = index;
+		index++;
+	}
+	for (int i = 97; i < 123; i++)
+	{
+		hm[i] = index;
+		index++;
+	}
+	cout<<index<<endl;
+}
+int tally = 0;
+struct node
+{
+	struct node* children[MAX_CHILDREN];
+};
+typedef struct node Node;
+Node* newNode(){
+	Node *create =(Node*) malloc(sizeof(Node));
+	for(int i=0;i<MAX_CHILDREN;i++){
+		create->children[i] = NULL;
+	}
+	return create;
+}
+void kill(Node* at){
+	for(int i=0;i<MAX_CHILDREN;i++){
+		if(at->children[i]){
+			kill(at->children[i]);
 		}
 	}
-	static long roll(long prev, char next) {
-		int add=hash[(int)next];
-		prev=(prev*62+add)%SENTINEL;
-		return prev;
+	free(at);
+}
+void add(Node* at, string in, int i){
+	// cout<<&at<<" "<<i<<endl;
+	if(i>=in.length())return;
+	int point = hm[in[i]];
+	// cout<<point<<" ";
+	if(at->children[point]==NULL){
+		// cout<<"ha"<<endl;
+		tally++;
+		at->children[point]=newNode();
 	}
-
-int main(){
-	int max;
-	std::cin>>max;
+	add(at->children[point], in, i+1);
+}
+int main()
+{
+	cin.tie(0);
+	cout.tie(0);
+	ios_base::sync_with_stdio(0);
+	int m;
+	cin>>m;
 	init();
-	for(int count=0;count<max;count++){
-//		std::cout<<count;
-		std::string next;
-		std::cin>>next;
-		std::unordered_set<long long> set;
-		set.insert((long)0);
-					for(int count2=0;count2<next.length();count2++) {
-						long init=0;
-						for(int count3=count2;count3<next.length();count3++) {
+	for(int i=0;i<m;i++){
+		string next;
+		cin>>next;
 
-
-							char nextC=next.at(count3);
-							if(count3==count2) {
-								init=hash[(int)nextC];
-							}
-							else {
-								init=roll(init, nextC);
-							}
-							set.insert(init);
-						}
-					}
-					std::cout<<set.size()<<std::endl;
+		tally= 1;
+		Node* cur=newNode();
+		for(int j=0;j<next.length();j++){
+			add(cur, next, j);
+		}
+		cout<<tally<<"\n";
+		kill(cur);
 	}
-
 }

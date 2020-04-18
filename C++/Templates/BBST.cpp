@@ -1,8 +1,5 @@
 #include <bits/stdc++.h>
-
 using namespace std;
-
-
 struct node
 {
     int key;
@@ -64,6 +61,10 @@ struct node *smallest(struct node *at)
     return temp;
 }
 bool found = false;
+struct node* lookup(struct node* at,int val)
+{
+    return (at==NULL||at->key==val)?at:((at->key<val)?lookup(at->right, val):lookup(at->left, val));
+}
 struct node *deleteNode(struct node *at, int val, int amount)
 {
     if (at == NULL)

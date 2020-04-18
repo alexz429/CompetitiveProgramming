@@ -1,8 +1,10 @@
 package CCC._03;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Scanner;
 public class S3_FloorPlan {
 	static char[][] grid;
 	static int max;
@@ -21,17 +23,17 @@ public class S3_FloorPlan {
 		out+=Recurse(X,Y+1);
 		return out;
 	}
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		Scanner sc= new Scanner(System.in);
-		max=sc.nextInt();
-		int W=sc.nextInt();
-		int L=sc.nextInt();
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		max=Integer.parseInt(br.readLine());
+		int W=Integer.parseInt(br.readLine());
+		int L=Integer.parseInt(br.readLine());
 		ArrayList<Integer> sizes=new ArrayList<Integer>();
 		
 		grid=new char[W][L];
 		for(int count=0;count<W;count++) {
-			String in=sc.next();
+			String in=br.readLine();
 		//	System.out.println(in.length());
 			for(int count2=0;count2<L;count2++) {
 				grid[count][count2]=in.charAt(count2);
@@ -57,7 +59,7 @@ public class S3_FloorPlan {
 		else {
 			System.out.println(count+" rooms, "+max+" square metre(s) left over");
 		}
-		sc.close();
+		br.close();
 		
 		
 	}

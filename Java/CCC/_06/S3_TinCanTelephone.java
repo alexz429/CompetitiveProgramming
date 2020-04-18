@@ -46,10 +46,7 @@ public class S3_TinCanTelephone {
 //		System.out.println("__________________"+start+" "+end+" "+left+" "+right);
 		boolean cross=false;
 		int a=crossProd(start, end, left);
-		Vector huh=new Vector((int)((Math.random()*2000)-1000),(int)((Math.random()*2000)-1000));
-		while(crossProd(start, end, huh)==0) {
-			huh=new Vector((int)((Math.random()*2000)-1000),(int)((Math.random()*2000)-1000));
-		}
+		
 		int b=crossProd(start, end, right);
 //		System.out.println(a+" "+b);
 		if(a*b<0||a==0||b==0) {
@@ -57,9 +54,6 @@ public class S3_TinCanTelephone {
 			cross=true;
 		}
 		
-		while(crossProd(left, right, huh)==0) {
-			huh=new Vector((int)((Math.random()*2000)-1000),(int)((Math.random()*2000)-1000));
-		}
 		a=crossProd(left, right, end);
 		b=crossProd(left, right, start);
 //		System.out.println(a+" "+b);
@@ -70,9 +64,15 @@ public class S3_TinCanTelephone {
 			}
 			
 		}
-if((a==0&&crossProd(huh, left, end)*crossProd(huh, right, end)<0)||(b==0&&crossProd(huh, left, start)*crossProd(huh, right, start)<0)) {
-	return false;
-}
+		
+		Vector rand=new Vector((int)((Math.random()*2000)-1000),(int)((Math.random()*2000)-1000));
+		while(crossProd(start, end, rand)==0) {
+			rand=new Vector((int)((Math.random()*2000)-1000),(int)((Math.random()*2000)-1000));
+		}
+		if((a==0&&crossProd(rand, left, end)*crossProd(rand, right, end)<0)||(b==0&&crossProd(rand, left, start)*crossProd(rand, right, start)<0)) {
+			return false;
+		}
+		
 		return true;
 	}
 	public static int crossProd(Vector a, Vector b, Vector c) {//if 0, AB parallel to AC; if > 0, AB Counter ClockWise of AC; if <0, AB ClockWise of AC
