@@ -11,6 +11,7 @@ int main(){
     int n;
     cin>>n;
     pair<int,int> vals[n];
+
     for(int i=0;i<n;i++){
         int a,b;
         cin>>a>>b;
@@ -21,5 +22,5 @@ int main(){
     for(int i=1;i<n;i++){
         best =max(best, (double)abs(vals[i-1].second-vals[i].second)/(double)(vals[i].first-vals[i-1].first));
     }
-    cout<<best<<endl;
+    cout<<fixed<<setprecision(10)<<best<<endl;
 }
