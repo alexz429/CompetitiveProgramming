@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-
+//NOTE: THIS IS NOT A FULL SOLUTION
 int main(){
     cin.tie(0);
     cout.tie(0);

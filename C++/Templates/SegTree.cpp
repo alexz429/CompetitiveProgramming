@@ -10,7 +10,7 @@ struct seg
 struct seg* init(int size, int value){
 int log = ceil(log2(size));
     struct seg* temp = (struct seg*) malloc(sizeof(struct seg));
-    temp->arr = new int[(int)(2*pow(2,log))];
+    temp->arr = new int[(int)(pow(2,log+1))];
     fill(temp->arr[0], temp->arr[size], 0);
     temp-> size = size;
     return temp;
