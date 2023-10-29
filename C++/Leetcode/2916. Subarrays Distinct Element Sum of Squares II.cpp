@@ -1,4 +1,6 @@
 using namespace std;
+//I gave up and set everything to long longs because some operations were overflowing
+//and I got too lazy to mod properly
 typedef long long ll;
 class Solution {
 public:
